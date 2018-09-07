@@ -68,13 +68,14 @@ namespace FourWindsCustomerList
             }
         }
 
+        // Show the next page of customers. 
         private void buttonNext_Click(object sender, EventArgs e)
         {
             // PositiontoNext returns true if it could find the 
             // the specified customer. 
             if (cl.PositionToNext(cl.LastCMName, cl.LastCMCustNo))
             {
-                // Clear the list. 
+                // Clear the list. This method clears the memory file. 
                 cl.ClearList();
                 // Get the next page. 
                 dgvCust.DataSource = cl.GetList();
@@ -86,12 +87,22 @@ namespace FourWindsCustomerList
 
             }
         }
+       // Position to a given name (if the name is found).
        private void buttonPositionTo_Click(object sender, EventArgs e)
         {
+            // The file is keyed on name and number, so you need to pass 
+            // a zero value for the number in this case. Needing to use a 
+            // value like this is a good argument for adding a overloaded 
+            // PositionTo method in the AVR class that only takes a customer 
+            // name. 
+            // PositionTo returns `true` if the customer was found.
             if (cl.PositionTo(textboxPositionTo.Text.Trim(), 0))
             {
+                // Clear the list. 
                 cl.ClearList();
+                // Get the next page. 
                 dgvCust.DataSource = cl.GetList();
+                // Set buttonNext enabled status. 
                 buttonNext.Enabled = cl.HasMoreRecords;
             }
             else
@@ -100,11 +111,16 @@ namespace FourWindsCustomerList
             }
         }
 
+        // Position to the first record in the file.
         private void buttonGotoFirst_Click(object sender, EventArgs e)
         {
+            // Position to the first record in the file.
             cl.PositionToFirst();
+            // Clear the list. 
             cl.ClearList();
+            // Get the next page. 
             dgvCust.DataSource = cl.GetList();
+            // Set buttonNext enabled status. 
             buttonNext.Enabled = cl.HasMoreRecords;
         }
     }

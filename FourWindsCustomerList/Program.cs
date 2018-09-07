@@ -17,6 +17,7 @@ namespace FourWindsCustomerList
         public const string RUNTIME_DB_NAME = "*PUBLIC/Cypress";
         //- public const string RUNTIME_DB_NAME = "*PUBLIC/DG NET Local";
         // The user name and password are cached here during the life of this program.
+        // (C#'s `static` keyword is the same as AVR's `Shared(*Yes)` keyword.)        
         public static string UserName;
         public static string Password;
 
