@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <title>Form1.cs</title>
+  <link rel="stylesheet" href="pycco.css">
+</head>
+<body>
+<div id='container'>
+  <div id="background"></div>
+  <div class='section'>
+    <div class='docs'><h1>Form1.cs</h1></div>
+  </div>
+  <div class='clearall'>
+  <div class='section' id='section-0'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-0'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span></span><span class="nx">using</span> <span class="nx">System</span><span class="p">;</span>
+<span class="nx">using</span> <span class="nx">System</span><span class="p">.</span><span class="nx">Windows</span><span class="p">.</span><span class="nx">Forms</span><span class="p">;</span>
+
+<span class="nx">namespace</span> <span class="nx">FourWindsCustomerList</span>
+<span class="p">{</span>
+    <span class="kr">public</span> <span class="nx">partial</span> <span class="kr">class</span> <span class="nx">Form1</span> <span class="o">:</span> <span class="nx">Form</span>
+    <span class="p">{</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-1'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-1'>#</a>
+      </div>
+      <p>This class requires an explicit reference to these assemblies:</p>
+<ul>
+<li>ASNA.VisualRPG.Runtime</li>
+<li>FourWindows.Customer </li>
+</ul>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>        <span class="nx">FourWinds</span><span class="p">.</span><span class="nx">Customer</span><span class="p">.</span><span class="nx">ListByName</span> <span class="nx">cl</span><span class="p">;</span>
+        <span class="nx">ASNA</span><span class="p">.</span><span class="nx">VisualRPG</span><span class="p">.</span><span class="nx">Runtime</span><span class="p">.</span><span class="nx">Database</span> <span class="nx">DGDB</span><span class="p">;</span>
+
+        <span class="kr">const</span> <span class="kr">int</span> <span class="nx">ROWS_TO_READ</span> <span class="o">=</span> <span class="mi">12</span><span class="p">;</span>
+
+        <span class="kr">public</span> <span class="nx">Form1</span><span class="p">()</span>
+        <span class="p">{</span>
+            <span class="nx">InitializeComponent</span><span class="p">();</span>
+        <span class="p">}</span>
+
+        <span class="kr">private</span> <span class="k">void</span> <span class="nx">Form1_Load</span><span class="p">(</span><span class="nx">object</span> <span class="nx">sender</span><span class="p">,</span> <span class="nx">EventArgs</span> <span class="nx">e</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="nx">dgvCust</span><span class="p">.</span><span class="nx">AutoGenerateColumns</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+
+            <span class="nx">formLogin</span> <span class="nx">lf</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">formLogin</span><span class="p">();</span>
+            <span class="nx">DialogResult</span> <span class="nx">dr</span> <span class="o">=</span> <span class="nx">lf</span><span class="p">.</span><span class="nx">ShowDialog</span><span class="p">();</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">dr</span> <span class="o">==</span> <span class="nx">DialogResult</span><span class="p">.</span><span class="nx">OK</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="nx">DGDB</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ASNA</span><span class="p">.</span><span class="nx">VisualRPG</span><span class="p">.</span><span class="nx">Runtime</span><span class="p">.</span><span class="nx">Database</span><span class="p">(</span><span class="nx">Program</span><span class="p">.</span><span class="nx">RUNTIME_DB_NAME</span><span class="p">);</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-2'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-2'>#</a>
+      </div>
+      <p>DGDB.User = Program.UserName;
+DGDB.Password = Program.Password;</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>            
+                <span class="nx">cl</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">FourWinds</span><span class="p">.</span><span class="nx">Customer</span><span class="p">.</span><span class="nx">ListByName</span><span class="p">(</span><span class="nx">DGDB</span><span class="p">,</span> <span class="nx">ROWS_TO_READ</span><span class="p">);</span>
+                <span class="nx">cl</span><span class="p">.</span><span class="nx">ConnectDB</span><span class="p">();</span>
+                <span class="nx">cl</span><span class="p">.</span><span class="nx">OpenFiles</span><span class="p">();</span>
+                <span class="nx">dgvCust</span><span class="p">.</span><span class="nx">DataSource</span> <span class="o">=</span> <span class="nx">cl</span><span class="p">.</span><span class="nx">GetList</span><span class="p">();</span>
+            <span class="p">}</span>
+            <span class="k">else</span>
+            <span class="p">{</span>
+                <span class="nx">Application</span><span class="p">.</span><span class="nx">Exit</span><span class="p">();</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="kr">private</span> <span class="k">void</span> <span class="nx">Form1_FormClosed</span><span class="p">(</span><span class="nx">object</span> <span class="nx">sender</span><span class="p">,</span> <span class="nx">FormClosedEventArgs</span> <span class="nx">e</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">cl</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="nx">cl</span><span class="p">.</span><span class="nx">CloseFiles</span><span class="p">();</span>
+                <span class="nx">cl</span><span class="p">.</span><span class="nx">DisconnectDB</span><span class="p">();</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="kr">private</span> <span class="k">void</span> <span class="nx">buttonNext_Click</span><span class="p">(</span><span class="nx">object</span> <span class="nx">sender</span><span class="p">,</span> <span class="nx">EventArgs</span> <span class="nx">e</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">cl</span><span class="p">.</span><span class="nx">PositionToNext</span><span class="p">(</span><span class="nx">cl</span><span class="p">.</span><span class="nx">LastCMName</span><span class="p">,</span> <span class="nx">cl</span><span class="p">.</span><span class="nx">LastCMCustNo</span><span class="p">))</span>
+            <span class="p">{</span>
+                <span class="nx">cl</span><span class="p">.</span><span class="nx">ClearList</span><span class="p">();</span>
+                <span class="nx">dgvCust</span><span class="p">.</span><span class="nx">DataSource</span> <span class="o">=</span> <span class="nx">cl</span><span class="p">.</span><span class="nx">GetList</span><span class="p">();</span>
+                <span class="nx">buttonNext</span><span class="p">.</span><span class="nx">Enabled</span> <span class="o">=</span> <span class="nx">cl</span><span class="p">.</span><span class="nx">HasMoreRecords</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="k">else</span>
+            <span class="p">{</span>
+
+            <span class="p">}</span>
+        <span class="p">}</span>
+       <span class="kr">private</span> <span class="k">void</span> <span class="nx">buttonPositionTo_Click</span><span class="p">(</span><span class="nx">object</span> <span class="nx">sender</span><span class="p">,</span> <span class="nx">EventArgs</span> <span class="nx">e</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">cl</span><span class="p">.</span><span class="nx">PositionTo</span><span class="p">(</span><span class="nx">textboxPositionTo</span><span class="p">.</span><span class="nx">Text</span><span class="p">.</span><span class="nx">Trim</span><span class="p">(),</span> <span class="mi">0</span><span class="p">))</span>
+            <span class="p">{</span>
+                <span class="nx">cl</span><span class="p">.</span><span class="nx">ClearList</span><span class="p">();</span>
+                <span class="nx">dgvCust</span><span class="p">.</span><span class="nx">DataSource</span> <span class="o">=</span> <span class="nx">cl</span><span class="p">.</span><span class="nx">GetList</span><span class="p">();</span>
+                <span class="nx">bool</span> <span class="nx">hasMoreRecords</span> <span class="o">=</span> <span class="nx">cl</span><span class="p">.</span><span class="nx">HasMoreRecords</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="k">else</span>
+            <span class="p">{</span>
+                <span class="nx">MessageBox</span><span class="p">.</span><span class="nx">Show</span><span class="p">(</span><span class="s2">&quot;Position-to value not found.&quot;</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="kr">private</span> <span class="k">void</span> <span class="nx">buttonGotoFirst_Click</span><span class="p">(</span><span class="nx">object</span> <span class="nx">sender</span><span class="p">,</span> <span class="nx">EventArgs</span> <span class="nx">e</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="nx">cl</span><span class="p">.</span><span class="nx">PositionToFirst</span><span class="p">();</span>
+            <span class="nx">cl</span><span class="p">.</span><span class="nx">ClearList</span><span class="p">();</span>
+            <span class="nx">dgvCust</span><span class="p">.</span><span class="nx">DataSource</span> <span class="o">=</span> <span class="nx">cl</span><span class="p">.</span><span class="nx">GetList</span><span class="p">();</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+</pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+</div>
+</body>

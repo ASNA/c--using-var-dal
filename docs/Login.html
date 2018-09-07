@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <title>Login.cs</title>
+  <link rel="stylesheet" href="pycco.css">
+</head>
+<body>
+<div id='container'>
+  <div id="background"></div>
+  <div class='section'>
+    <div class='docs'><h1>Login.cs</h1></div>
+  </div>
+  <div class='clearall'>
+  <div class='section' id='section-0'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-0'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span></span><span class="nx">using</span> <span class="nx">System</span><span class="p">;</span>
+<span class="nx">using</span> <span class="nx">System</span><span class="p">.</span><span class="nx">Windows</span><span class="p">.</span><span class="nx">Forms</span><span class="p">;</span>
+
+<span class="nx">namespace</span> <span class="nx">FourWindsCustomerList</span>
+<span class="p">{</span>
+    <span class="kr">public</span> <span class="nx">partial</span> <span class="kr">class</span> <span class="nx">formLogin</span> <span class="o">:</span> <span class="nx">Form</span>
+    <span class="p">{</span>
+        <span class="kr">public</span> <span class="nx">formLogin</span><span class="p">()</span>
+        <span class="p">{</span>
+            <span class="nx">InitializeComponent</span><span class="p">();</span>
+        <span class="p">}</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-1'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-1'>#</a>
+      </div>
+      <p>Attempt login to DataGate DB with credentials provided. This login 
+is purely for authenticating the user--this connection is then immediately 
+closed. If authenticated, the user name and password are persisted at 
+runtime in the UserName and Password static variables in the Program class
+(which is the startup object). Other forms and classes in this project 
+can then reference those values for other runtime connections.  </p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>        <span class="kr">private</span> <span class="k">void</span> <span class="nx">buttonLogin_Click</span><span class="p">(</span><span class="nx">object</span> <span class="nx">sender</span><span class="p">,</span> <span class="nx">EventArgs</span> <span class="nx">e</span><span class="p">)</span>
+        <span class="p">{</span>
+
+            <span class="k">return</span><span class="p">;</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-2'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-2'>#</a>
+      </div>
+      <p>The runtime database name is provided as a static constant in the 
+Program class. </p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>            <span class="nx">ASNA</span><span class="p">.</span><span class="nx">VisualRPG</span><span class="p">.</span><span class="nx">Runtime</span><span class="p">.</span><span class="nx">Database</span> <span class="nx">DGDB</span> <span class="o">=</span> 
+                <span class="k">new</span> <span class="nx">ASNA</span><span class="p">.</span><span class="nx">VisualRPG</span><span class="p">.</span><span class="nx">Runtime</span><span class="p">.</span><span class="nx">Database</span><span class="p">(</span><span class="nx">Program</span><span class="p">.</span><span class="nx">RUNTIME_DB_NAME</span><span class="p">);</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-3'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-3'>#</a>
+      </div>
+      <p>Create an instance of an AVR class with a ConnectDB method. This instance
+is only used for authenticating the user. </p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>            <span class="nx">FourWinds</span><span class="p">.</span><span class="nx">Customer</span><span class="p">.</span><span class="nx">ListByName</span> <span class="nx">cl</span> <span class="o">=</span> 
+                <span class="k">new</span> <span class="nx">FourWinds</span><span class="p">.</span><span class="nx">Customer</span><span class="p">.</span><span class="nx">ListByName</span><span class="p">(</span><span class="nx">DGDB</span><span class="p">);</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-4'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-4'>#</a>
+      </div>
+      <p>Override the runtime DatabaseName's User and Password properties with those 
+provided by the user at runtime. </p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>            <span class="nx">DGDB</span><span class="p">.</span><span class="nx">User</span> <span class="o">=</span> <span class="nx">textboxUser</span><span class="p">.</span><span class="nx">Text</span><span class="p">.</span><span class="nx">Trim</span><span class="p">();</span>
+            <span class="nx">DGDB</span><span class="p">.</span><span class="nx">Password</span> <span class="o">=</span> <span class="nx">textboxPassword</span><span class="p">.</span><span class="nx">Text</span><span class="p">.</span><span class="nx">Trim</span><span class="p">();</span>
+
+            <span class="k">try</span>
+            <span class="p">{</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-5'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-5'>#</a>
+      </div>
+      <p>Attempt DB connect.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>                <span class="nx">cl</span><span class="p">.</span><span class="nx">ConnectDB</span><span class="p">();</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-6'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-6'>#</a>
+      </div>
+      <p>Save user and password for use later. </p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>                <span class="nx">Program</span><span class="p">.</span><span class="nx">UserName</span> <span class="o">=</span> <span class="nx">textboxUser</span><span class="p">.</span><span class="nx">Text</span><span class="p">.</span><span class="nx">Trim</span><span class="p">();</span>
+                <span class="nx">Program</span><span class="p">.</span><span class="nx">Password</span> <span class="o">=</span> <span class="nx">textboxPassword</span><span class="p">.</span><span class="nx">Text</span><span class="p">.</span><span class="nx">Trim</span><span class="p">();</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-7'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-7'>#</a>
+      </div>
+      <p>Disconnect DB. </p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>                <span class="nx">cl</span><span class="p">.</span><span class="nx">DisconnectDB</span><span class="p">();</span>
+            <span class="p">}</span>
+            <span class="k">catch</span> <span class="p">(</span><span class="nx">Exception</span> <span class="nx">ex</span><span class="p">)</span>
+            <span class="p">{</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-8'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-8'>#</a>
+      </div>
+      <p>Show connectinon failed </p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>                <span class="nx">string</span> <span class="nx">Message</span> <span class="o">=</span> <span class="nx">ex</span><span class="p">.</span><span class="nx">Message</span><span class="p">;</span>
+                <span class="nx">MessageBox</span><span class="p">.</span><span class="nx">Show</span><span class="p">(</span><span class="s2">&quot;Unable to connect: &quot;</span> <span class="o">+</span> <span class="nx">Message</span><span class="p">);</span>
+                <span class="nx">buttonLogin</span><span class="p">.</span><span class="nx">DialogResult</span> <span class="o">=</span> <span class="nx">DialogResult</span><span class="p">.</span><span class="nx">Cancel</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+</pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+</div>
+</body>
