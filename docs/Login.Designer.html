@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <title>Login.Designer.cs</title>
+  <link rel="stylesheet" href="pycco.css">
+</head>
+<body>
+<div id='container'>
+  <div id="background"></div>
+  <div class='section'>
+    <div class='docs'><h1>Login.Designer.cs</h1></div>
+  </div>
+  <div class='clearall'>
+  <div class='section' id='section-0'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-0'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span></span><span class="nx">namespace</span> <span class="nx">FourWindsCustomerList</span>
+<span class="p">{</span>
+    <span class="nx">partial</span> <span class="kr">class</span> <span class="nx">formLogin</span>
+    <span class="p">{</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-1'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-1'>#</a>
+      </div>
+      <p>/ <summary>
+/ Required designer variable.
+/ </summary></p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>        <span class="kr">private</span> <span class="nx">System</span><span class="p">.</span><span class="nx">ComponentModel</span><span class="p">.</span><span class="nx">IContainer</span> <span class="nx">components</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-2'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-2'>#</a>
+      </div>
+      <p>/ <summary>
+/ Clean up any resources being used.
+/ </summary>
+/ <param name="disposing">true if managed resources should be disposed; otherwise, false.</param></p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>        <span class="kr">protected</span> <span class="nx">override</span> <span class="k">void</span> <span class="nx">Dispose</span><span class="p">(</span><span class="nx">bool</span> <span class="nx">disposing</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">disposing</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">components</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">))</span>
+            <span class="p">{</span>
+                <span class="nx">components</span><span class="p">.</span><span class="nx">Dispose</span><span class="p">();</span>
+            <span class="p">}</span>
+            <span class="nx">base</span><span class="p">.</span><span class="nx">Dispose</span><span class="p">(</span><span class="nx">disposing</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="err">#</span><span class="nx">region</span> <span class="nx">Windows</span> <span class="nx">Form</span> <span class="nx">Designer</span> <span class="nx">generated</span> <span class="nx">code</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-3'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-3'>#</a>
+      </div>
+      <p>/ <summary>
+/ Required method for Designer support - do not modify
+/ the contents of this method with the code editor.
+/ </summary></p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>        <span class="kr">private</span> <span class="k">void</span> <span class="nx">InitializeComponent</span><span class="p">()</span>
+        <span class="p">{</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">textboxUser</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">System</span><span class="p">.</span><span class="nx">Windows</span><span class="p">.</span><span class="nx">Forms</span><span class="p">.</span><span class="nx">TextBox</span><span class="p">();</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">textboxPassword</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">System</span><span class="p">.</span><span class="nx">Windows</span><span class="p">.</span><span class="nx">Forms</span><span class="p">.</span><span class="nx">TextBox</span><span class="p">();</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">label1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">System</span><span class="p">.</span><span class="nx">Windows</span><span class="p">.</span><span class="nx">Forms</span><span class="p">.</span><span class="nx">Label</span><span class="p">();</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">label2</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">System</span><span class="p">.</span><span class="nx">Windows</span><span class="p">.</span><span class="nx">Forms</span><span class="p">.</span><span class="nx">Label</span><span class="p">();</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">buttonLogin</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">System</span><span class="p">.</span><span class="nx">Windows</span><span class="p">.</span><span class="nx">Forms</span><span class="p">.</span><span class="nx">Button</span><span class="p">();</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">buttonCancelLogin</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">System</span><span class="p">.</span><span class="nx">Windows</span><span class="p">.</span><span class="nx">Forms</span><span class="p">.</span><span class="nx">Button</span><span class="p">();</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">SuspendLayout</span><span class="p">();</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-4'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-4'>#</a>
+      </div>
+      <p>textboxUser</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>            <span class="k">this</span><span class="p">.</span><span class="nx">textboxUser</span><span class="p">.</span><span class="nx">Location</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">System</span><span class="p">.</span><span class="nx">Drawing</span><span class="p">.</span><span class="nx">Point</span><span class="p">(</span><span class="mi">151</span><span class="p">,</span> <span class="mi">56</span><span class="p">);</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">textboxUser</span><span class="p">.</span><span class="nx">Margin</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">System</span><span class="p">.</span><span class="nx">Windows</span><span class="p">.</span><span class="nx">Forms</span><span class="p">.</span><span class="nx">Padding</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">textboxUser</span><span class="p">.</span><span class="nx">Name</span> <span class="o">=</span> <span class="s2">&quot;textboxUser&quot;</span><span class="p">;</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">textboxUser</span><span class="p">.</span><span class="nx">Size</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">System</span><span class="p">.</span><span class="nx">Drawing</span><span class="p">.</span><span class="nx">Size</span><span class="p">(</span><span class="mi">148</span><span class="p">,</span> <span class="mi">26</span><span class="p">);</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">textboxUser</span><span class="p">.</span><span class="nx">TabIndex</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-5'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-5'>#</a>
+      </div>
+      <p>textboxPassword</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>            <span class="k">this</span><span class="p">.</span><span class="nx">textboxPassword</span><span class="p">.</span><span class="nx">Location</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">System</span><span class="p">.</span><span class="nx">Drawing</span><span class="p">.</span><span class="nx">Point</span><span class="p">(</span><span class="mi">151</span><span class="p">,</span> <span class="mi">92</span><span class="p">);</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">textboxPassword</span><span class="p">.</span><span class="nx">Margin</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">System</span><span class="p">.</span><span class="nx">Windows</span><span class="p">.</span><span class="nx">Forms</span><span class="p">.</span><span class="nx">Padding</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">textboxPassword</span><span class="p">.</span><span class="nx">Name</span> <span class="o">=</span> <span class="s2">&quot;textboxPassword&quot;</span><span class="p">;</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">textboxPassword</span><span class="p">.</span><span class="nx">Size</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">System</span><span class="p">.</span><span class="nx">Drawing</span><span class="p">.</span><span class="nx">Size</span><span class="p">(</span><span class="mi">148</span><span class="p">,</span> <span class="mi">26</span><span class="p">);</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">textboxPassword</span><span class="p">.</span><span class="nx">TabIndex</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-6'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-6'>#</a>
+      </div>
+      <p>label1</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>            <span class="k">this</span><span class="p">.</span><span class="nx">label1</span><span class="p">.</span><span class="nx">AutoSize</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">label1</span><span class="p">.</span><span class="nx">Location</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">System</span><span class="p">.</span><span class="nx">Drawing</span><span class="p">.</span><span class="nx">Point</span><span class="p">(</span><span class="mi">51</span><span class="p">,</span> <span class="mi">59</span><span class="p">);</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">label1</span><span class="p">.</span><span class="nx">Name</span> <span class="o">=</span> <span class="s2">&quot;label1&quot;</span><span class="p">;</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">label1</span><span class="p">.</span><span class="nx">Size</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">System</span><span class="p">.</span><span class="nx">Drawing</span><span class="p">.</span><span class="nx">Size</span><span class="p">(</span><span class="mi">43</span><span class="p">,</span> <span class="mi">20</span><span class="p">);</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">label1</span><span class="p">.</span><span class="nx">TabIndex</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">label1</span><span class="p">.</span><span class="nx">Text</span> <span class="o">=</span> <span class="s2">&quot;User&quot;</span><span class="p">;</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-7'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-7'>#</a>
+      </div>
+      <p>label2</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>            <span class="k">this</span><span class="p">.</span><span class="nx">label2</span><span class="p">.</span><span class="nx">AutoSize</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">label2</span><span class="p">.</span><span class="nx">Location</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">System</span><span class="p">.</span><span class="nx">Drawing</span><span class="p">.</span><span class="nx">Point</span><span class="p">(</span><span class="mi">51</span><span class="p">,</span> <span class="mi">98</span><span class="p">);</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">label2</span><span class="p">.</span><span class="nx">Name</span> <span class="o">=</span> <span class="s2">&quot;label2&quot;</span><span class="p">;</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">label2</span><span class="p">.</span><span class="nx">Size</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">System</span><span class="p">.</span><span class="nx">Drawing</span><span class="p">.</span><span class="nx">Size</span><span class="p">(</span><span class="mi">78</span><span class="p">,</span> <span class="mi">20</span><span class="p">);</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">label2</span><span class="p">.</span><span class="nx">TabIndex</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">label2</span><span class="p">.</span><span class="nx">Text</span> <span class="o">=</span> <span class="s2">&quot;Password&quot;</span><span class="p">;</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-8'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-8'>#</a>
+      </div>
+      <p>buttonLogin</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>            <span class="k">this</span><span class="p">.</span><span class="nx">buttonLogin</span><span class="p">.</span><span class="nx">DialogResult</span> <span class="o">=</span> <span class="nx">System</span><span class="p">.</span><span class="nx">Windows</span><span class="p">.</span><span class="nx">Forms</span><span class="p">.</span><span class="nx">DialogResult</span><span class="p">.</span><span class="nx">OK</span><span class="p">;</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">buttonLogin</span><span class="p">.</span><span class="nx">Location</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">System</span><span class="p">.</span><span class="nx">Drawing</span><span class="p">.</span><span class="nx">Point</span><span class="p">(</span><span class="mi">224</span><span class="p">,</span> <span class="mi">142</span><span class="p">);</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">buttonLogin</span><span class="p">.</span><span class="nx">Name</span> <span class="o">=</span> <span class="s2">&quot;buttonLogin&quot;</span><span class="p">;</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">buttonLogin</span><span class="p">.</span><span class="nx">Size</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">System</span><span class="p">.</span><span class="nx">Drawing</span><span class="p">.</span><span class="nx">Size</span><span class="p">(</span><span class="mi">75</span><span class="p">,</span> <span class="mi">43</span><span class="p">);</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">buttonLogin</span><span class="p">.</span><span class="nx">TabIndex</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">buttonLogin</span><span class="p">.</span><span class="nx">Text</span> <span class="o">=</span> <span class="s2">&quot;Log in&quot;</span><span class="p">;</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">buttonLogin</span><span class="p">.</span><span class="nx">UseVisualStyleBackColor</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">buttonLogin</span><span class="p">.</span><span class="nx">Click</span> <span class="o">+=</span> <span class="k">new</span> <span class="nx">System</span><span class="p">.</span><span class="nx">EventHandler</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">buttonLogin_Click</span><span class="p">);</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-9'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-9'>#</a>
+      </div>
+      <p>buttonCancelLogin</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>            <span class="k">this</span><span class="p">.</span><span class="nx">buttonCancelLogin</span><span class="p">.</span><span class="nx">DialogResult</span> <span class="o">=</span> <span class="nx">System</span><span class="p">.</span><span class="nx">Windows</span><span class="p">.</span><span class="nx">Forms</span><span class="p">.</span><span class="nx">DialogResult</span><span class="p">.</span><span class="nx">Cancel</span><span class="p">;</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">buttonCancelLogin</span><span class="p">.</span><span class="nx">Location</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">System</span><span class="p">.</span><span class="nx">Drawing</span><span class="p">.</span><span class="nx">Point</span><span class="p">(</span><span class="mi">143</span><span class="p">,</span> <span class="mi">142</span><span class="p">);</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">buttonCancelLogin</span><span class="p">.</span><span class="nx">Name</span> <span class="o">=</span> <span class="s2">&quot;buttonCancelLogin&quot;</span><span class="p">;</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">buttonCancelLogin</span><span class="p">.</span><span class="nx">Size</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">System</span><span class="p">.</span><span class="nx">Drawing</span><span class="p">.</span><span class="nx">Size</span><span class="p">(</span><span class="mi">75</span><span class="p">,</span> <span class="mi">43</span><span class="p">);</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">buttonCancelLogin</span><span class="p">.</span><span class="nx">TabIndex</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">buttonCancelLogin</span><span class="p">.</span><span class="nx">Text</span> <span class="o">=</span> <span class="s2">&quot;Cancel&quot;</span><span class="p">;</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">buttonCancelLogin</span><span class="p">.</span><span class="nx">UseVisualStyleBackColor</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-10'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-10'>#</a>
+      </div>
+      <p>formLogin</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>            <span class="k">this</span><span class="p">.</span><span class="nx">AcceptButton</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">buttonLogin</span><span class="p">;</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">AutoScaleDimensions</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">System</span><span class="p">.</span><span class="nx">Drawing</span><span class="p">.</span><span class="nx">SizeF</span><span class="p">(</span><span class="mi">9</span><span class="nx">F</span><span class="p">,</span> <span class="mi">20</span><span class="nx">F</span><span class="p">);</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">AutoScaleMode</span> <span class="o">=</span> <span class="nx">System</span><span class="p">.</span><span class="nx">Windows</span><span class="p">.</span><span class="nx">Forms</span><span class="p">.</span><span class="nx">AutoScaleMode</span><span class="p">.</span><span class="nx">Font</span><span class="p">;</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">CancelButton</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">buttonCancelLogin</span><span class="p">;</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">ClientSize</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">System</span><span class="p">.</span><span class="nx">Drawing</span><span class="p">.</span><span class="nx">Size</span><span class="p">(</span><span class="mi">414</span><span class="p">,</span> <span class="mi">241</span><span class="p">);</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">Controls</span><span class="p">.</span><span class="nx">Add</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">buttonCancelLogin</span><span class="p">);</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">Controls</span><span class="p">.</span><span class="nx">Add</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">buttonLogin</span><span class="p">);</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">Controls</span><span class="p">.</span><span class="nx">Add</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">label2</span><span class="p">);</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">Controls</span><span class="p">.</span><span class="nx">Add</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">label1</span><span class="p">);</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">Controls</span><span class="p">.</span><span class="nx">Add</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">textboxPassword</span><span class="p">);</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">Controls</span><span class="p">.</span><span class="nx">Add</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">textboxUser</span><span class="p">);</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">Font</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">System</span><span class="p">.</span><span class="nx">Drawing</span><span class="p">.</span><span class="nx">Font</span><span class="p">(</span><span class="s2">&quot;Microsoft Sans Serif&quot;</span><span class="p">,</span> <span class="mi">12</span><span class="nx">F</span><span class="p">,</span> <span class="nx">System</span><span class="p">.</span><span class="nx">Drawing</span><span class="p">.</span><span class="nx">FontStyle</span><span class="p">.</span><span class="nx">Regular</span><span class="p">,</span> <span class="nx">System</span><span class="p">.</span><span class="nx">Drawing</span><span class="p">.</span><span class="nx">GraphicsUnit</span><span class="p">.</span><span class="nx">Point</span><span class="p">,</span> <span class="p">((</span><span class="kr">byte</span><span class="p">)(</span><span class="mi">0</span><span class="p">)));</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">FormBorderStyle</span> <span class="o">=</span> <span class="nx">System</span><span class="p">.</span><span class="nx">Windows</span><span class="p">.</span><span class="nx">Forms</span><span class="p">.</span><span class="nx">FormBorderStyle</span><span class="p">.</span><span class="nx">FixedToolWindow</span><span class="p">;</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">Margin</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">System</span><span class="p">.</span><span class="nx">Windows</span><span class="p">.</span><span class="nx">Forms</span><span class="p">.</span><span class="nx">Padding</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">Name</span> <span class="o">=</span> <span class="s2">&quot;formLogin&quot;</span><span class="p">;</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">StartPosition</span> <span class="o">=</span> <span class="nx">System</span><span class="p">.</span><span class="nx">Windows</span><span class="p">.</span><span class="nx">Forms</span><span class="p">.</span><span class="nx">FormStartPosition</span><span class="p">.</span><span class="nx">CenterParent</span><span class="p">;</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">Text</span> <span class="o">=</span> <span class="s2">&quot;Login&quot;</span><span class="p">;</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">ResumeLayout</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">PerformLayout</span><span class="p">();</span>
+
+        <span class="p">}</span>
+
+        <span class="err">#</span><span class="nx">endregion</span>
+
+        <span class="kr">private</span> <span class="nx">System</span><span class="p">.</span><span class="nx">Windows</span><span class="p">.</span><span class="nx">Forms</span><span class="p">.</span><span class="nx">TextBox</span> <span class="nx">textboxUser</span><span class="p">;</span>
+        <span class="kr">private</span> <span class="nx">System</span><span class="p">.</span><span class="nx">Windows</span><span class="p">.</span><span class="nx">Forms</span><span class="p">.</span><span class="nx">TextBox</span> <span class="nx">textboxPassword</span><span class="p">;</span>
+        <span class="kr">private</span> <span class="nx">System</span><span class="p">.</span><span class="nx">Windows</span><span class="p">.</span><span class="nx">Forms</span><span class="p">.</span><span class="nx">Label</span> <span class="nx">label1</span><span class="p">;</span>
+        <span class="kr">private</span> <span class="nx">System</span><span class="p">.</span><span class="nx">Windows</span><span class="p">.</span><span class="nx">Forms</span><span class="p">.</span><span class="nx">Label</span> <span class="nx">label2</span><span class="p">;</span>
+        <span class="kr">private</span> <span class="nx">System</span><span class="p">.</span><span class="nx">Windows</span><span class="p">.</span><span class="nx">Forms</span><span class="p">.</span><span class="nx">Button</span> <span class="nx">buttonLogin</span><span class="p">;</span>
+        <span class="kr">private</span> <span class="nx">System</span><span class="p">.</span><span class="nx">Windows</span><span class="p">.</span><span class="nx">Forms</span><span class="p">.</span><span class="nx">Button</span> <span class="nx">buttonCancelLogin</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+</pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+</div>
+</body>

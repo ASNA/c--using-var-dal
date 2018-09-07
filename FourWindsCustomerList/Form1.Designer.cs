@@ -43,9 +43,9 @@
             // 
             // buttonNext
             // 
-            this.buttonNext.Location = new System.Drawing.Point(853, 67);
+            this.buttonNext.Location = new System.Drawing.Point(555, 67);
             this.buttonNext.Name = "buttonNext";
-            this.buttonNext.Size = new System.Drawing.Size(75, 31);
+            this.buttonNext.Size = new System.Drawing.Size(112, 35);
             this.buttonNext.TabIndex = 21;
             this.buttonNext.Text = "Next";
             this.buttonNext.UseVisualStyleBackColor = true;
@@ -111,7 +111,7 @@
             // 
             // buttonPositionTo
             // 
-            this.buttonPositionTo.Location = new System.Drawing.Point(322, 39);
+            this.buttonPositionTo.Location = new System.Drawing.Point(314, 67);
             this.buttonPositionTo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonPositionTo.Name = "buttonPositionTo";
             this.buttonPositionTo.Size = new System.Drawing.Size(112, 35);
@@ -122,15 +122,16 @@
             // 
             // textboxPositionTo
             // 
-            this.textboxPositionTo.Location = new System.Drawing.Point(61, 43);
+            this.textboxPositionTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textboxPositionTo.Location = new System.Drawing.Point(53, 71);
             this.textboxPositionTo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textboxPositionTo.Name = "textboxPositionTo";
-            this.textboxPositionTo.Size = new System.Drawing.Size(250, 20);
+            this.textboxPositionTo.Size = new System.Drawing.Size(250, 26);
             this.textboxPositionTo.TabIndex = 22;
             // 
             // buttonGotoFirst
             // 
-            this.buttonGotoFirst.Location = new System.Drawing.Point(709, 63);
+            this.buttonGotoFirst.Location = new System.Drawing.Point(434, 67);
             this.buttonGotoFirst.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonGotoFirst.Name = "buttonGotoFirst";
             this.buttonGotoFirst.Size = new System.Drawing.Size(112, 35);

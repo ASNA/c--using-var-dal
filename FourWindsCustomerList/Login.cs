@@ -19,8 +19,6 @@ namespace FourWindsCustomerList
         private void buttonLogin_Click(object sender, EventArgs e)
         {
 
-            return; 
-
             // The runtime database name is provided as a static constant in the 
             // Program class. 
             ASNA.VisualRPG.Runtime.Database DGDB = 
