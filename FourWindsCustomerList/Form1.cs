@@ -7,8 +7,8 @@ namespace FourWindsCustomerList
     {
         // This class requires an explicit reference to these assemblies:
         // 
-        // * ASNA.VisualRPG.Runtime
-        // * FourWindows.Customer 
+        // * ASNA.VisualRPG.Runtime - this is packag with the Visual RPG Windows deployment.
+        // * FourWindows.Customer - [this is availble here](https://github.com/ASNA/dotnet-avr-example-dal-class)
         //
         // The developers' PC and endusers' PCs need to have the VisualRPG Windows deployment 
         // installed and licensed.  

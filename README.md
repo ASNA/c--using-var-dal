@@ -1,3 +1,5 @@
+This C# uses the ASNA Visual RPG class [ListByName and DBConnection classes provided here.](https://github.com/ASNA/dotnet-avr-example-dal-class)
+
 
 #### Annotated code
 
