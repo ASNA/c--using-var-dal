@@ -9,10 +9,14 @@ namespace FourWindsCustomerList
         // 
         // * ASNA.VisualRPG.Runtime
         // * FourWindows.Customer 
+        //
+        // The developers' PC and endusers' PCs need to have the VisualRPG Windows deployment 
+        // installed and licensed.  
 
         // Declare global (to this form/class) class variables. 
         FourWinds.Customer.ListByName cl;
-        ASNA.VisualRPG.Runtime.Database DGDB;
+        //ASNA.VisualRPG.Runtime.Database DGDB;
+        FourWinds.Customer.DBConnection DGDB;
 
         // Set number of rows to read in the ListByName class. 
         const int ROWS_TO_READ = 12;
@@ -34,14 +38,14 @@ namespace FourWindsCustomerList
             // If OK, then...
             if (dr == DialogResult.OK)
             {
-                // Instance a DataGate DB object. 
-                DGDB = new ASNA.VisualRPG.Runtime.Database(Program.RUNTIME_DB_NAME);
-                // Set its user and password to the values provided at login.
-                DGDB.User = Program.UserName;
-                DGDB.Password = Program.Password;
-            
+                // Instance a DataGate DB object. This connection uses the DB name, 
+                // the user, and the password provided. It overrides the DB connection 
+                // that ListByName was compiled with. 
+                DGDB = new FourWinds.Customer.DBConnection(Program.RUNTIME_DB_NAME, 
+                                                           Program.UserName, 
+                                                           Program.Password);
                 // Instance the ListByName class. 
-                cl = new FourWinds.Customer.ListByName(DGDB, ROWS_TO_READ);
+                cl = new FourWinds.Customer.ListByName(DGDB.Connection, ROWS_TO_READ);
                 // Connect its database.
                 cl.ConnectDB();
                 // Open its files. 

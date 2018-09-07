@@ -40,6 +40,8 @@
 <li>ASNA.VisualRPG.Runtime</li>
 <li>FourWindows.Customer </li>
 </ul>
+<p>The developers' PC and endusers' PCs need to have the VisualRPG Windows deployment 
+installed and licensed.  </p>
     </div>
     <div class='code'>
       <div class="highlight"><pre></pre></div>
@@ -54,8 +56,7 @@
       <p>Declare global (to this form/class) class variables. </p>
     </div>
     <div class='code'>
-      <div class="highlight"><pre>        <span class="nx">FourWinds</span><span class="p">.</span><span class="nx">Customer</span><span class="p">.</span><span class="nx">ListByName</span> <span class="nx">cl</span><span class="p">;</span>
-        <span class="nx">ASNA</span><span class="p">.</span><span class="nx">VisualRPG</span><span class="p">.</span><span class="nx">Runtime</span><span class="p">.</span><span class="nx">Database</span> <span class="nx">DGDB</span><span class="p">;</span></pre></div>
+      <div class="highlight"><pre>        <span class="nx">FourWinds</span><span class="p">.</span><span class="nx">Customer</span><span class="p">.</span><span class="nx">ListByName</span> <span class="nx">cl</span><span class="p">;</span></pre></div>
     </div>
   </div>
   <div class='clearall'></div>
@@ -63,6 +64,18 @@
     <div class='docs'>
       <div class='octowrap'>
         <a class='octothorpe' href='#section-3'>#</a>
+      </div>
+      <p>ASNA.VisualRPG.Runtime.Database DGDB;</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>        <span class="nx">FourWinds</span><span class="p">.</span><span class="nx">Customer</span><span class="p">.</span><span class="nx">DBConnection</span> <span class="nx">DGDB</span><span class="p">;</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-4'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-4'>#</a>
       </div>
       <p>Set number of rows to read in the ListByName class. </p>
     </div>
@@ -79,10 +92,10 @@
     </div>
   </div>
   <div class='clearall'></div>
-  <div class='section' id='section-4'>
+  <div class='section' id='section-5'>
     <div class='docs'>
       <div class='octowrap'>
-        <a class='octothorpe' href='#section-4'>#</a>
+        <a class='octothorpe' href='#section-5'>#</a>
       </div>
       <p>Use only the manually created DataGridView columns.                </p>
     </div>
@@ -91,10 +104,10 @@
     </div>
   </div>
   <div class='clearall'></div>
-  <div class='section' id='section-5'>
+  <div class='section' id='section-6'>
     <div class='docs'>
       <div class='octowrap'>
-        <a class='octothorpe' href='#section-5'>#</a>
+        <a class='octothorpe' href='#section-6'>#</a>
       </div>
       <p>Instance a login form. </p>
     </div>
@@ -103,10 +116,10 @@
     </div>
   </div>
   <div class='clearall'></div>
-  <div class='section' id='section-6'>
+  <div class='section' id='section-7'>
     <div class='docs'>
       <div class='octowrap'>
-        <a class='octothorpe' href='#section-6'>#</a>
+        <a class='octothorpe' href='#section-7'>#</a>
       </div>
       <p>Show it and put its result in <code>dr</code>.</p>
     </div>
@@ -115,10 +128,10 @@
     </div>
   </div>
   <div class='clearall'></div>
-  <div class='section' id='section-7'>
+  <div class='section' id='section-8'>
     <div class='docs'>
       <div class='octowrap'>
-        <a class='octothorpe' href='#section-7'>#</a>
+        <a class='octothorpe' href='#section-8'>#</a>
       </div>
       <p>If OK, then...</p>
     </div>
@@ -128,28 +141,19 @@
     </div>
   </div>
   <div class='clearall'></div>
-  <div class='section' id='section-8'>
-    <div class='docs'>
-      <div class='octowrap'>
-        <a class='octothorpe' href='#section-8'>#</a>
-      </div>
-      <p>Instance a DataGate DB object. </p>
-    </div>
-    <div class='code'>
-      <div class="highlight"><pre>                <span class="nx">DGDB</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ASNA</span><span class="p">.</span><span class="nx">VisualRPG</span><span class="p">.</span><span class="nx">Runtime</span><span class="p">.</span><span class="nx">Database</span><span class="p">(</span><span class="nx">Program</span><span class="p">.</span><span class="nx">RUNTIME_DB_NAME</span><span class="p">);</span></pre></div>
-    </div>
-  </div>
-  <div class='clearall'></div>
   <div class='section' id='section-9'>
     <div class='docs'>
       <div class='octowrap'>
         <a class='octothorpe' href='#section-9'>#</a>
       </div>
-      <p>Set its user and password to the values provided at login.</p>
+      <p>Instance a DataGate DB object. This connection uses the DB name, 
+the user, and the password provided. It overrides the DB connection 
+that ListByName was compiled with. </p>
     </div>
     <div class='code'>
-      <div class="highlight"><pre>                <span class="nx">DGDB</span><span class="p">.</span><span class="nx">User</span> <span class="o">=</span> <span class="nx">Program</span><span class="p">.</span><span class="nx">UserName</span><span class="p">;</span>
-                <span class="nx">DGDB</span><span class="p">.</span><span class="nx">Password</span> <span class="o">=</span> <span class="nx">Program</span><span class="p">.</span><span class="nx">Password</span><span class="p">;</span></pre></div>
+      <div class="highlight"><pre>                <span class="nx">DGDB</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">FourWinds</span><span class="p">.</span><span class="nx">Customer</span><span class="p">.</span><span class="nx">DBConnection</span><span class="p">(</span><span class="nx">Program</span><span class="p">.</span><span class="nx">RUNTIME_DB_NAME</span><span class="p">,</span> 
+                                                           <span class="nx">Program</span><span class="p">.</span><span class="nx">UserName</span><span class="p">,</span> 
+                                                           <span class="nx">Program</span><span class="p">.</span><span class="nx">Password</span><span class="p">);</span></pre></div>
     </div>
   </div>
   <div class='clearall'></div>
@@ -161,7 +165,7 @@
       <p>Instance the ListByName class. </p>
     </div>
     <div class='code'>
-      <div class="highlight"><pre>                <span class="nx">cl</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">FourWinds</span><span class="p">.</span><span class="nx">Customer</span><span class="p">.</span><span class="nx">ListByName</span><span class="p">(</span><span class="nx">DGDB</span><span class="p">,</span> <span class="nx">ROWS_TO_READ</span><span class="p">);</span></pre></div>
+      <div class="highlight"><pre>                <span class="nx">cl</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">FourWinds</span><span class="p">.</span><span class="nx">Customer</span><span class="p">.</span><span class="nx">ListByName</span><span class="p">(</span><span class="nx">DGDB</span><span class="p">.</span><span class="nx">Connection</span><span class="p">,</span> <span class="nx">ROWS_TO_READ</span><span class="p">);</span></pre></div>
     </div>
   </div>
   <div class='clearall'></div>
@@ -246,10 +250,7 @@
       <div class="highlight"><pre>                <span class="nx">cl</span><span class="p">.</span><span class="nx">CloseFiles</span><span class="p">();</span>
                 <span class="nx">cl</span><span class="p">.</span><span class="nx">DisconnectDB</span><span class="p">();</span>
             <span class="p">}</span>
-        <span class="p">}</span>
-
-        <span class="kr">private</span> <span class="k">void</span> <span class="nx">buttonNext_Click</span><span class="p">(</span><span class="nx">object</span> <span class="nx">sender</span><span class="p">,</span> <span class="nx">EventArgs</span> <span class="nx">e</span><span class="p">)</span>
-        <span class="p">{</span></pre></div>
+        <span class="p">}</span></pre></div>
     </div>
   </div>
   <div class='clearall'></div>
@@ -257,6 +258,19 @@
     <div class='docs'>
       <div class='octowrap'>
         <a class='octothorpe' href='#section-17'>#</a>
+      </div>
+      <p>Show the next page of customers. </p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>        <span class="kr">private</span> <span class="k">void</span> <span class="nx">buttonNext_Click</span><span class="p">(</span><span class="nx">object</span> <span class="nx">sender</span><span class="p">,</span> <span class="nx">EventArgs</span> <span class="nx">e</span><span class="p">)</span>
+        <span class="p">{</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-18'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-18'>#</a>
       </div>
       <p>PositiontoNext returns true if it could find the 
 the specified customer. </p>
@@ -267,22 +281,22 @@ the specified customer. </p>
     </div>
   </div>
   <div class='clearall'></div>
-  <div class='section' id='section-18'>
+  <div class='section' id='section-19'>
     <div class='docs'>
       <div class='octowrap'>
-        <a class='octothorpe' href='#section-18'>#</a>
+        <a class='octothorpe' href='#section-19'>#</a>
       </div>
-      <p>Clear the list. </p>
+      <p>Clear the list. This method clears the memory file. </p>
     </div>
     <div class='code'>
       <div class="highlight"><pre>                <span class="nx">cl</span><span class="p">.</span><span class="nx">ClearList</span><span class="p">();</span></pre></div>
     </div>
   </div>
   <div class='clearall'></div>
-  <div class='section' id='section-19'>
+  <div class='section' id='section-20'>
     <div class='docs'>
       <div class='octowrap'>
-        <a class='octothorpe' href='#section-19'>#</a>
+        <a class='octothorpe' href='#section-20'>#</a>
       </div>
       <p>Get the next page. </p>
     </div>
@@ -291,10 +305,10 @@ the specified customer. </p>
     </div>
   </div>
   <div class='clearall'></div>
-  <div class='section' id='section-20'>
+  <div class='section' id='section-21'>
     <div class='docs'>
       <div class='octowrap'>
-        <a class='octothorpe' href='#section-20'>#</a>
+        <a class='octothorpe' href='#section-21'>#</a>
       </div>
       <p>Set buttonNext enabled status. </p>
     </div>
@@ -305,27 +319,141 @@ the specified customer. </p>
             <span class="p">{</span>
 
             <span class="p">}</span>
-        <span class="p">}</span>
-       <span class="kr">private</span> <span class="k">void</span> <span class="nx">buttonPositionTo_Click</span><span class="p">(</span><span class="nx">object</span> <span class="nx">sender</span><span class="p">,</span> <span class="nx">EventArgs</span> <span class="nx">e</span><span class="p">)</span>
-        <span class="p">{</span>
-            <span class="k">if</span> <span class="p">(</span><span class="nx">cl</span><span class="p">.</span><span class="nx">PositionTo</span><span class="p">(</span><span class="nx">textboxPositionTo</span><span class="p">.</span><span class="nx">Text</span><span class="p">.</span><span class="nx">Trim</span><span class="p">(),</span> <span class="mi">0</span><span class="p">))</span>
-            <span class="p">{</span>
-                <span class="nx">cl</span><span class="p">.</span><span class="nx">ClearList</span><span class="p">();</span>
-                <span class="nx">dgvCust</span><span class="p">.</span><span class="nx">DataSource</span> <span class="o">=</span> <span class="nx">cl</span><span class="p">.</span><span class="nx">GetList</span><span class="p">();</span>
-                <span class="nx">buttonNext</span><span class="p">.</span><span class="nx">Enabled</span> <span class="o">=</span> <span class="nx">cl</span><span class="p">.</span><span class="nx">HasMoreRecords</span><span class="p">;</span>
+        <span class="p">}</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-22'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-22'>#</a>
+      </div>
+      <p>Position to a given name (if the name is found).</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>       <span class="kr">private</span> <span class="k">void</span> <span class="nx">buttonPositionTo_Click</span><span class="p">(</span><span class="nx">object</span> <span class="nx">sender</span><span class="p">,</span> <span class="nx">EventArgs</span> <span class="nx">e</span><span class="p">)</span>
+        <span class="p">{</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-23'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-23'>#</a>
+      </div>
+      <p>The file is keyed on name and number, so you need to pass 
+a zero value for the number in this case. Needing to use a 
+value like this is a good argument for adding a overloaded 
+PositionTo method in the AVR class that only takes a customer 
+name. 
+PositionTo returns <code>true</code> if the customer was found.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>            <span class="k">if</span> <span class="p">(</span><span class="nx">cl</span><span class="p">.</span><span class="nx">PositionTo</span><span class="p">(</span><span class="nx">textboxPositionTo</span><span class="p">.</span><span class="nx">Text</span><span class="p">.</span><span class="nx">Trim</span><span class="p">(),</span> <span class="mi">0</span><span class="p">))</span>
+            <span class="p">{</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-24'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-24'>#</a>
+      </div>
+      <p>Clear the list. </p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>                <span class="nx">cl</span><span class="p">.</span><span class="nx">ClearList</span><span class="p">();</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-25'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-25'>#</a>
+      </div>
+      <p>Get the next page. </p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>                <span class="nx">dgvCust</span><span class="p">.</span><span class="nx">DataSource</span> <span class="o">=</span> <span class="nx">cl</span><span class="p">.</span><span class="nx">GetList</span><span class="p">();</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-26'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-26'>#</a>
+      </div>
+      <p>Set buttonNext enabled status. </p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>                <span class="nx">buttonNext</span><span class="p">.</span><span class="nx">Enabled</span> <span class="o">=</span> <span class="nx">cl</span><span class="p">.</span><span class="nx">HasMoreRecords</span><span class="p">;</span>
             <span class="p">}</span>
             <span class="k">else</span>
             <span class="p">{</span>
                 <span class="nx">MessageBox</span><span class="p">.</span><span class="nx">Show</span><span class="p">(</span><span class="s2">&quot;Position-to value not found.&quot;</span><span class="p">);</span>
             <span class="p">}</span>
-        <span class="p">}</span>
-
-        <span class="kr">private</span> <span class="k">void</span> <span class="nx">buttonGotoFirst_Click</span><span class="p">(</span><span class="nx">object</span> <span class="nx">sender</span><span class="p">,</span> <span class="nx">EventArgs</span> <span class="nx">e</span><span class="p">)</span>
-        <span class="p">{</span>
-            <span class="nx">cl</span><span class="p">.</span><span class="nx">PositionToFirst</span><span class="p">();</span>
-            <span class="nx">cl</span><span class="p">.</span><span class="nx">ClearList</span><span class="p">();</span>
-            <span class="nx">dgvCust</span><span class="p">.</span><span class="nx">DataSource</span> <span class="o">=</span> <span class="nx">cl</span><span class="p">.</span><span class="nx">GetList</span><span class="p">();</span>
-            <span class="nx">buttonNext</span><span class="p">.</span><span class="nx">Enabled</span> <span class="o">=</span> <span class="nx">cl</span><span class="p">.</span><span class="nx">HasMoreRecords</span><span class="p">;</span>
+        <span class="p">}</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-27'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-27'>#</a>
+      </div>
+      <p>Position to the first record in the file.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>        <span class="kr">private</span> <span class="k">void</span> <span class="nx">buttonGotoFirst_Click</span><span class="p">(</span><span class="nx">object</span> <span class="nx">sender</span><span class="p">,</span> <span class="nx">EventArgs</span> <span class="nx">e</span><span class="p">)</span>
+        <span class="p">{</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-28'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-28'>#</a>
+      </div>
+      <p>Position to the first record in the file.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>            <span class="nx">cl</span><span class="p">.</span><span class="nx">PositionToFirst</span><span class="p">();</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-29'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-29'>#</a>
+      </div>
+      <p>Clear the list. </p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>            <span class="nx">cl</span><span class="p">.</span><span class="nx">ClearList</span><span class="p">();</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-30'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-30'>#</a>
+      </div>
+      <p>Get the next page. </p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>            <span class="nx">dgvCust</span><span class="p">.</span><span class="nx">DataSource</span> <span class="o">=</span> <span class="nx">cl</span><span class="p">.</span><span class="nx">GetList</span><span class="p">();</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-31'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-31'>#</a>
+      </div>
+      <p>Set buttonNext enabled status. </p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>            <span class="nx">buttonNext</span><span class="p">.</span><span class="nx">Enabled</span> <span class="o">=</span> <span class="nx">cl</span><span class="p">.</span><span class="nx">HasMoreRecords</span><span class="p">;</span>
         <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span>
