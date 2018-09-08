@@ -1,4 +1,15 @@
-﻿using System;
+﻿
+// <input action="action" onclick="window.history.go(-1); return false;" type="button" value="Back to members list" />
+// ---
+// This form confirms a user's credentials to the IBM i. The approved user and password are stored in static 
+// variables in the Program class(Program.cs). 
+// 
+// ![](loginform.png)
+// 
+// 
+// ---
+
+using System;
 using System.Windows.Forms;
 
 namespace FourWindsCustomerList
