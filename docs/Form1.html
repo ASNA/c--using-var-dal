@@ -20,13 +20,7 @@
       
     </div>
     <div class='code'>
-      <div class="highlight"><pre><span></span><span class="nx">using</span> <span class="nx">System</span><span class="p">;</span>
-<span class="nx">using</span> <span class="nx">System</span><span class="p">.</span><span class="nx">Windows</span><span class="p">.</span><span class="nx">Forms</span><span class="p">;</span>
-
-<span class="nx">namespace</span> <span class="nx">FourWindsCustomerList</span>
-<span class="p">{</span>
-    <span class="kr">public</span> <span class="nx">partial</span> <span class="kr">class</span> <span class="nx">Form1</span> <span class="o">:</span> <span class="nx">Form</span>
-    <span class="p">{</span></pre></div>
+      <div class="highlight"><pre><span></span></pre></div>
     </div>
   </div>
   <div class='clearall'></div>
@@ -35,13 +29,11 @@
       <div class='octowrap'>
         <a class='octothorpe' href='#section-1'>#</a>
       </div>
-      <p>This class requires an explicit reference to these assemblies:</p>
-<ul>
-<li>ASNA.VisualRPG.Runtime - this is packag with the Visual RPG Windows deployment.</li>
-<li>FourWindows.Customer - <a href="https://github.com/ASNA/dotnet-avr-example-dal-class">this is availble here</a></li>
-</ul>
-<p>The developers' PC and endusers' PCs need to have the VisualRPG Windows deployment 
-installed and licensed.  </p>
+      <h2><input action="action" onclick="window.history.go(-1); return false;" type="button" value="Back to members list" /></h2>
+<p>This form confirms a user's credentials to the IBM i. The approved user and password are stored in static 
+variables in the Program class(Program.cs). </p>
+<p><img alt="" src="loginform.png" /></p>
+<hr />
     </div>
     <div class='code'>
       <div class="highlight"><pre></pre></div>
@@ -53,10 +45,16 @@ installed and licensed.  </p>
       <div class='octowrap'>
         <a class='octothorpe' href='#section-2'>#</a>
       </div>
-      <p>Declare global (to this form/class) class variables. </p>
+      <p>Namespace declarations.</p>
     </div>
     <div class='code'>
-      <div class="highlight"><pre>        <span class="nx">FourWinds</span><span class="p">.</span><span class="nx">Customer</span><span class="p">.</span><span class="nx">ListByName</span> <span class="nx">cl</span><span class="p">;</span></pre></div>
+      <div class="highlight"><pre><span class="nx">using</span> <span class="nx">System</span><span class="p">;</span>
+<span class="nx">using</span> <span class="nx">System</span><span class="p">.</span><span class="nx">Windows</span><span class="p">.</span><span class="nx">Forms</span><span class="p">;</span>
+
+<span class="nx">namespace</span> <span class="nx">FourWindsCustomerList</span>
+<span class="p">{</span>
+    <span class="kr">public</span> <span class="nx">partial</span> <span class="kr">class</span> <span class="nx">Form1</span> <span class="o">:</span> <span class="nx">Form</span>
+    <span class="p">{</span></pre></div>
     </div>
   </div>
   <div class='clearall'></div>
@@ -65,10 +63,16 @@ installed and licensed.  </p>
       <div class='octowrap'>
         <a class='octothorpe' href='#section-3'>#</a>
       </div>
-      <p>ASNA.VisualRPG.Runtime.Database DGDB;</p>
+      <p>This class requires an explicit reference to these assemblies:</p>
+<ul>
+<li>ASNA.VisualRPG.Runtime - this is packaged with the Visual RPG Windows deployment.</li>
+<li>FourWindows.Customer - <a href="https://github.com/ASNA/dotnet-avr-example-dal-class">this is availble here</a></li>
+</ul>
+<p>The developers' PC and endusers' PCs need to have the VisualRPG Windows deployment 
+installed and licensed.  </p>
     </div>
     <div class='code'>
-      <div class="highlight"><pre>        <span class="nx">FourWinds</span><span class="p">.</span><span class="nx">Customer</span><span class="p">.</span><span class="nx">DBConnection</span> <span class="nx">DGDB</span><span class="p">;</span></pre></div>
+      <div class="highlight"><pre></pre></div>
     </div>
   </div>
   <div class='clearall'></div>
@@ -76,6 +80,42 @@ installed and licensed.  </p>
     <div class='docs'>
       <div class='octowrap'>
         <a class='octothorpe' href='#section-4'>#</a>
+      </div>
+      <p>Declare global (to this form/class) class variables. </p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-5'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-5'>#</a>
+      </div>
+      <p>Declare the AVR class this C# app uses.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>        <span class="nx">FourWinds</span><span class="p">.</span><span class="nx">Customer</span><span class="p">.</span><span class="nx">ListByName</span> <span class="nx">cl</span><span class="p">;</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-6'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-6'>#</a>
+      </div>
+      <p>ASNA.VisualRPG.Runtime.Database DGDB;</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>        <span class="nx">FourWinds</span><span class="p">.</span><span class="nx">Customer</span><span class="p">.</span><span class="nx">DBConnection</span> <span class="nx">DGDB</span><span class="p">;</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-7'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-7'>#</a>
       </div>
       <p>Set number of rows to read in the ListByName class. </p>
     </div>
@@ -92,10 +132,10 @@ installed and licensed.  </p>
     </div>
   </div>
   <div class='clearall'></div>
-  <div class='section' id='section-5'>
+  <div class='section' id='section-8'>
     <div class='docs'>
       <div class='octowrap'>
-        <a class='octothorpe' href='#section-5'>#</a>
+        <a class='octothorpe' href='#section-8'>#</a>
       </div>
       <p>Use only the manually created DataGridView columns.                </p>
     </div>
@@ -104,10 +144,10 @@ installed and licensed.  </p>
     </div>
   </div>
   <div class='clearall'></div>
-  <div class='section' id='section-6'>
+  <div class='section' id='section-9'>
     <div class='docs'>
       <div class='octowrap'>
-        <a class='octothorpe' href='#section-6'>#</a>
+        <a class='octothorpe' href='#section-9'>#</a>
       </div>
       <p>Instance a login form. </p>
     </div>
@@ -116,10 +156,10 @@ installed and licensed.  </p>
     </div>
   </div>
   <div class='clearall'></div>
-  <div class='section' id='section-7'>
+  <div class='section' id='section-10'>
     <div class='docs'>
       <div class='octowrap'>
-        <a class='octothorpe' href='#section-7'>#</a>
+        <a class='octothorpe' href='#section-10'>#</a>
       </div>
       <p>Show it and put its result in <code>dr</code>.</p>
     </div>
@@ -128,10 +168,10 @@ installed and licensed.  </p>
     </div>
   </div>
   <div class='clearall'></div>
-  <div class='section' id='section-8'>
+  <div class='section' id='section-11'>
     <div class='docs'>
       <div class='octowrap'>
-        <a class='octothorpe' href='#section-8'>#</a>
+        <a class='octothorpe' href='#section-11'>#</a>
       </div>
       <p>If OK, then...</p>
     </div>
@@ -141,10 +181,10 @@ installed and licensed.  </p>
     </div>
   </div>
   <div class='clearall'></div>
-  <div class='section' id='section-9'>
+  <div class='section' id='section-12'>
     <div class='docs'>
       <div class='octowrap'>
-        <a class='octothorpe' href='#section-9'>#</a>
+        <a class='octothorpe' href='#section-12'>#</a>
       </div>
       <p>Instance a DataGate DB object. This connection uses the DB name, 
 the user, and the password provided. It overrides the DB connection 
@@ -157,10 +197,10 @@ that ListByName was compiled with. </p>
     </div>
   </div>
   <div class='clearall'></div>
-  <div class='section' id='section-10'>
+  <div class='section' id='section-13'>
     <div class='docs'>
       <div class='octowrap'>
-        <a class='octothorpe' href='#section-10'>#</a>
+        <a class='octothorpe' href='#section-13'>#</a>
       </div>
       <p>Instance the ListByName class. </p>
     </div>
@@ -169,10 +209,10 @@ that ListByName was compiled with. </p>
     </div>
   </div>
   <div class='clearall'></div>
-  <div class='section' id='section-11'>
+  <div class='section' id='section-14'>
     <div class='docs'>
       <div class='octowrap'>
-        <a class='octothorpe' href='#section-11'>#</a>
+        <a class='octothorpe' href='#section-14'>#</a>
       </div>
       <p>Connect its database.</p>
     </div>
@@ -181,10 +221,10 @@ that ListByName was compiled with. </p>
     </div>
   </div>
   <div class='clearall'></div>
-  <div class='section' id='section-12'>
+  <div class='section' id='section-15'>
     <div class='docs'>
       <div class='octowrap'>
-        <a class='octothorpe' href='#section-12'>#</a>
+        <a class='octothorpe' href='#section-15'>#</a>
       </div>
       <p>Open its files. </p>
     </div>
@@ -193,10 +233,10 @@ that ListByName was compiled with. </p>
     </div>
   </div>
   <div class='clearall'></div>
-  <div class='section' id='section-13'>
+  <div class='section' id='section-16'>
     <div class='docs'>
       <div class='octowrap'>
-        <a class='octothorpe' href='#section-13'>#</a>
+        <a class='octothorpe' href='#section-16'>#</a>
       </div>
       <p>Get the first page of customers.</p>
     </div>
@@ -208,10 +248,10 @@ that ListByName was compiled with. </p>
     </div>
   </div>
   <div class='clearall'></div>
-  <div class='section' id='section-14'>
+  <div class='section' id='section-17'>
     <div class='docs'>
       <div class='octowrap'>
-        <a class='octothorpe' href='#section-14'>#</a>
+        <a class='octothorpe' href='#section-17'>#</a>
       </div>
       <p>If the user canceled the login, then exit this app. </p>
     </div>
@@ -225,10 +265,10 @@ that ListByName was compiled with. </p>
     </div>
   </div>
   <div class='clearall'></div>
-  <div class='section' id='section-15'>
+  <div class='section' id='section-18'>
     <div class='docs'>
       <div class='octowrap'>
-        <a class='octothorpe' href='#section-15'>#</a>
+        <a class='octothorpe' href='#section-18'>#</a>
       </div>
       <p>Make the <code>cl</code> instance of ListByName is indeed instanced. 
 (It won't be if the user canceled the login.)</p>
@@ -239,10 +279,10 @@ that ListByName was compiled with. </p>
     </div>
   </div>
   <div class='clearall'></div>
-  <div class='section' id='section-16'>
+  <div class='section' id='section-19'>
     <div class='docs'>
       <div class='octowrap'>
-        <a class='octothorpe' href='#section-16'>#</a>
+        <a class='octothorpe' href='#section-19'>#</a>
       </div>
       <p>Close files and disconnect the DB.</p>
     </div>
@@ -254,10 +294,10 @@ that ListByName was compiled with. </p>
     </div>
   </div>
   <div class='clearall'></div>
-  <div class='section' id='section-17'>
+  <div class='section' id='section-20'>
     <div class='docs'>
       <div class='octowrap'>
-        <a class='octothorpe' href='#section-17'>#</a>
+        <a class='octothorpe' href='#section-20'>#</a>
       </div>
       <p>Show the next page of customers. </p>
     </div>
@@ -267,10 +307,10 @@ that ListByName was compiled with. </p>
     </div>
   </div>
   <div class='clearall'></div>
-  <div class='section' id='section-18'>
+  <div class='section' id='section-21'>
     <div class='docs'>
       <div class='octowrap'>
-        <a class='octothorpe' href='#section-18'>#</a>
+        <a class='octothorpe' href='#section-21'>#</a>
       </div>
       <p>PositiontoNext returns true if it could find the 
 the specified customer. </p>
@@ -281,10 +321,10 @@ the specified customer. </p>
     </div>
   </div>
   <div class='clearall'></div>
-  <div class='section' id='section-19'>
+  <div class='section' id='section-22'>
     <div class='docs'>
       <div class='octowrap'>
-        <a class='octothorpe' href='#section-19'>#</a>
+        <a class='octothorpe' href='#section-22'>#</a>
       </div>
       <p>Clear the list. This method clears the memory file. </p>
     </div>
@@ -293,10 +333,10 @@ the specified customer. </p>
     </div>
   </div>
   <div class='clearall'></div>
-  <div class='section' id='section-20'>
+  <div class='section' id='section-23'>
     <div class='docs'>
       <div class='octowrap'>
-        <a class='octothorpe' href='#section-20'>#</a>
+        <a class='octothorpe' href='#section-23'>#</a>
       </div>
       <p>Get the next page. </p>
     </div>
@@ -305,10 +345,10 @@ the specified customer. </p>
     </div>
   </div>
   <div class='clearall'></div>
-  <div class='section' id='section-21'>
+  <div class='section' id='section-24'>
     <div class='docs'>
       <div class='octowrap'>
-        <a class='octothorpe' href='#section-21'>#</a>
+        <a class='octothorpe' href='#section-24'>#</a>
       </div>
       <p>Set buttonNext enabled status. </p>
     </div>
@@ -323,10 +363,10 @@ the specified customer. </p>
     </div>
   </div>
   <div class='clearall'></div>
-  <div class='section' id='section-22'>
+  <div class='section' id='section-25'>
     <div class='docs'>
       <div class='octowrap'>
-        <a class='octothorpe' href='#section-22'>#</a>
+        <a class='octothorpe' href='#section-25'>#</a>
       </div>
       <p>Position to a given name (if the name is found).</p>
     </div>
@@ -336,10 +376,10 @@ the specified customer. </p>
     </div>
   </div>
   <div class='clearall'></div>
-  <div class='section' id='section-23'>
+  <div class='section' id='section-26'>
     <div class='docs'>
       <div class='octowrap'>
-        <a class='octothorpe' href='#section-23'>#</a>
+        <a class='octothorpe' href='#section-26'>#</a>
       </div>
       <p>The file is keyed on name and number, so you need to pass 
 a zero value for the number in this case. Needing to use a 
@@ -354,10 +394,10 @@ PositionTo returns <code>true</code> if the customer was found.</p>
     </div>
   </div>
   <div class='clearall'></div>
-  <div class='section' id='section-24'>
+  <div class='section' id='section-27'>
     <div class='docs'>
       <div class='octowrap'>
-        <a class='octothorpe' href='#section-24'>#</a>
+        <a class='octothorpe' href='#section-27'>#</a>
       </div>
       <p>Clear the list. </p>
     </div>
@@ -366,10 +406,10 @@ PositionTo returns <code>true</code> if the customer was found.</p>
     </div>
   </div>
   <div class='clearall'></div>
-  <div class='section' id='section-25'>
+  <div class='section' id='section-28'>
     <div class='docs'>
       <div class='octowrap'>
-        <a class='octothorpe' href='#section-25'>#</a>
+        <a class='octothorpe' href='#section-28'>#</a>
       </div>
       <p>Get the next page. </p>
     </div>
@@ -378,10 +418,10 @@ PositionTo returns <code>true</code> if the customer was found.</p>
     </div>
   </div>
   <div class='clearall'></div>
-  <div class='section' id='section-26'>
+  <div class='section' id='section-29'>
     <div class='docs'>
       <div class='octowrap'>
-        <a class='octothorpe' href='#section-26'>#</a>
+        <a class='octothorpe' href='#section-29'>#</a>
       </div>
       <p>Set buttonNext enabled status. </p>
     </div>
@@ -396,10 +436,10 @@ PositionTo returns <code>true</code> if the customer was found.</p>
     </div>
   </div>
   <div class='clearall'></div>
-  <div class='section' id='section-27'>
+  <div class='section' id='section-30'>
     <div class='docs'>
       <div class='octowrap'>
-        <a class='octothorpe' href='#section-27'>#</a>
+        <a class='octothorpe' href='#section-30'>#</a>
       </div>
       <p>Position to the first record in the file.</p>
     </div>
@@ -409,10 +449,10 @@ PositionTo returns <code>true</code> if the customer was found.</p>
     </div>
   </div>
   <div class='clearall'></div>
-  <div class='section' id='section-28'>
+  <div class='section' id='section-31'>
     <div class='docs'>
       <div class='octowrap'>
-        <a class='octothorpe' href='#section-28'>#</a>
+        <a class='octothorpe' href='#section-31'>#</a>
       </div>
       <p>Position to the first record in the file.</p>
     </div>
@@ -421,10 +461,10 @@ PositionTo returns <code>true</code> if the customer was found.</p>
     </div>
   </div>
   <div class='clearall'></div>
-  <div class='section' id='section-29'>
+  <div class='section' id='section-32'>
     <div class='docs'>
       <div class='octowrap'>
-        <a class='octothorpe' href='#section-29'>#</a>
+        <a class='octothorpe' href='#section-32'>#</a>
       </div>
       <p>Clear the list. </p>
     </div>
@@ -433,10 +473,10 @@ PositionTo returns <code>true</code> if the customer was found.</p>
     </div>
   </div>
   <div class='clearall'></div>
-  <div class='section' id='section-30'>
+  <div class='section' id='section-33'>
     <div class='docs'>
       <div class='octowrap'>
-        <a class='octothorpe' href='#section-30'>#</a>
+        <a class='octothorpe' href='#section-33'>#</a>
       </div>
       <p>Get the next page. </p>
     </div>
@@ -445,10 +485,10 @@ PositionTo returns <code>true</code> if the customer was found.</p>
     </div>
   </div>
   <div class='clearall'></div>
-  <div class='section' id='section-31'>
+  <div class='section' id='section-34'>
     <div class='docs'>
       <div class='octowrap'>
-        <a class='octothorpe' href='#section-31'>#</a>
+        <a class='octothorpe' href='#section-34'>#</a>
       </div>
       <p>Set buttonNext enabled status. </p>
     </div>

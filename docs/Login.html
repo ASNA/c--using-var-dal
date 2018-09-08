@@ -48,7 +48,8 @@ can then reference those values for other runtime connections.  </p>
     </div>
     <div class='code'>
       <div class="highlight"><pre>        <span class="kr">private</span> <span class="k">void</span> <span class="nx">buttonLogin_Click</span><span class="p">(</span><span class="nx">object</span> <span class="nx">sender</span><span class="p">,</span> <span class="nx">EventArgs</span> <span class="nx">e</span><span class="p">)</span>
-        <span class="p">{</span></pre></div>
+        <span class="p">{</span>
+            <span class="nx">FourWinds</span><span class="p">.</span><span class="nx">Customer</span><span class="p">.</span><span class="nx">DBConnection</span> <span class="nx">DGDB</span><span class="p">;</span></pre></div>
     </div>
   </div>
   <div class='clearall'></div>
@@ -58,15 +59,14 @@ can then reference those values for other runtime connections.  </p>
         <a class='octothorpe' href='#section-2'>#</a>
       </div>
       <p>The runtime database name is provided as a static constant in the 
-Program class. 
-ASNA.VisualRPG.Runtime.Database DGDB = 
-   new ASNA.VisualRPG.Runtime.Database(Program.RUNTIME_DB_NAME);</p>
+Program class. </p>
     </div>
     <div class='code'>
-      <div class="highlight"><pre>            <span class="nx">FourWinds</span><span class="p">.</span><span class="nx">Customer</span><span class="p">.</span><span class="nx">DBConnection</span> <span class="nx">DGDB</span> <span class="o">=</span> 
-                <span class="k">new</span> <span class="nx">FourWinds</span><span class="p">.</span><span class="nx">Customer</span><span class="p">.</span><span class="nx">DBConnection</span><span class="p">(</span><span class="nx">Program</span><span class="p">.</span><span class="nx">RUNTIME_DB_NAME</span><span class="p">,</span> 
-                                                    <span class="nx">textboxUser</span><span class="p">.</span><span class="nx">Text</span><span class="p">.</span><span class="nx">Trim</span><span class="p">(),</span> 
-                                                    <span class="nx">textboxPassword</span><span class="p">.</span><span class="nx">Text</span><span class="p">.</span><span class="nx">Trim</span><span class="p">());</span></pre></div>
+      <div class="highlight"><pre>            <span class="nx">DGDB</span> <span class="o">=</span>  <span class="k">new</span> <span class="nx">FourWinds</span><span class="p">.</span><span class="nx">Customer</span><span class="p">.</span><span class="nx">DBConnection</span><span class="p">(</span><span class="nx">Program</span><span class="p">.</span><span class="nx">RUNTIME_DB_NAME</span><span class="p">,</span> 
+                                                            <span class="nx">textboxUser</span><span class="p">.</span><span class="nx">Text</span><span class="p">.</span><span class="nx">Trim</span><span class="p">(),</span> 
+                                                            <span class="nx">textboxPassword</span><span class="p">.</span><span class="nx">Text</span><span class="p">.</span><span class="nx">Trim</span><span class="p">());</span>
+            <span class="k">try</span>
+            <span class="p">{</span></pre></div>
     </div>
   </div>
   <div class='clearall'></div>
@@ -75,11 +75,10 @@ ASNA.VisualRPG.Runtime.Database DGDB =
       <div class='octowrap'>
         <a class='octothorpe' href='#section-3'>#</a>
       </div>
-      <p>Create an instance of an AVR class with a ConnectDB method. This instance
-is only used for authenticating the user. </p>
+      <p>Attempt DB connect.</p>
     </div>
     <div class='code'>
-      <div class="highlight"><pre>            <span class="nx">FourWinds</span><span class="p">.</span><span class="nx">Customer</span><span class="p">.</span><span class="nx">ListByName</span> <span class="nx">cl</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">FourWinds</span><span class="p">.</span><span class="nx">Customer</span><span class="p">.</span><span class="nx">ListByName</span><span class="p">(</span><span class="nx">DGDB</span><span class="p">.</span><span class="nx">Connection</span><span class="p">);</span></pre></div>
+      <div class="highlight"><pre>                <span class="nx">DGDB</span><span class="p">.</span><span class="nx">ConnectDB</span><span class="p">();</span></pre></div>
     </div>
   </div>
   <div class='clearall'></div>
@@ -87,34 +86,6 @@ is only used for authenticating the user. </p>
     <div class='docs'>
       <div class='octowrap'>
         <a class='octothorpe' href='#section-4'>#</a>
-      </div>
-      <p>Override the runtime DatabaseName's User and Password properties with those 
-provided by the user at runtime. 
-DGDB.pgmDB.User = textboxUser.Text.Trim();
-DGDB.pgmDB.Password = textboxPassword.Text.Trim();</p>
-    </div>
-    <div class='code'>
-      <div class="highlight"><pre>            <span class="k">try</span>
-            <span class="p">{</span></pre></div>
-    </div>
-  </div>
-  <div class='clearall'></div>
-  <div class='section' id='section-5'>
-    <div class='docs'>
-      <div class='octowrap'>
-        <a class='octothorpe' href='#section-5'>#</a>
-      </div>
-      <p>Attempt DB connect.</p>
-    </div>
-    <div class='code'>
-      <div class="highlight"><pre>                <span class="nx">cl</span><span class="p">.</span><span class="nx">ConnectDB</span><span class="p">();</span></pre></div>
-    </div>
-  </div>
-  <div class='clearall'></div>
-  <div class='section' id='section-6'>
-    <div class='docs'>
-      <div class='octowrap'>
-        <a class='octothorpe' href='#section-6'>#</a>
       </div>
       <p>Save user and password for use later. </p>
     </div>
@@ -124,25 +95,25 @@ DGDB.pgmDB.Password = textboxPassword.Text.Trim();</p>
     </div>
   </div>
   <div class='clearall'></div>
-  <div class='section' id='section-7'>
+  <div class='section' id='section-5'>
     <div class='docs'>
       <div class='octowrap'>
-        <a class='octothorpe' href='#section-7'>#</a>
+        <a class='octothorpe' href='#section-5'>#</a>
       </div>
       <p>Disconnect DB. </p>
     </div>
     <div class='code'>
-      <div class="highlight"><pre>                <span class="nx">cl</span><span class="p">.</span><span class="nx">DisconnectDB</span><span class="p">();</span>
+      <div class="highlight"><pre>                <span class="nx">DGDB</span><span class="p">.</span><span class="nx">DisconnectDB</span><span class="p">();</span>
             <span class="p">}</span>
             <span class="k">catch</span> <span class="p">(</span><span class="nx">Exception</span> <span class="nx">ex</span><span class="p">)</span>
             <span class="p">{</span></pre></div>
     </div>
   </div>
   <div class='clearall'></div>
-  <div class='section' id='section-8'>
+  <div class='section' id='section-6'>
     <div class='docs'>
       <div class='octowrap'>
-        <a class='octothorpe' href='#section-8'>#</a>
+        <a class='octothorpe' href='#section-6'>#</a>
       </div>
       <p>Show connectinon failed </p>
     </div>

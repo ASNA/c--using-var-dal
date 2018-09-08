@@ -1,4 +1,16 @@
-﻿using System;
+﻿
+// <input action="action" onclick="window.history.go(-1); return false;" type="button" value="Back to members list" />
+// ---
+// This form confirms a user's credentials to the IBM i. The approved user and password are stored in static 
+// variables in the Program class(Program.cs). 
+// 
+// ![](loginform.png)
+// 
+// 
+// ---
+
+// Namespace declarations.
+using System;
 using System.Windows.Forms;
 
 namespace FourWindsCustomerList
@@ -7,14 +19,17 @@ namespace FourWindsCustomerList
     {
         // This class requires an explicit reference to these assemblies:
         // 
-        // * ASNA.VisualRPG.Runtime - this is packag with the Visual RPG Windows deployment.
+        // * ASNA.VisualRPG.Runtime - this is packaged with the Visual RPG Windows deployment.
         // * FourWindows.Customer - [this is availble here](https://github.com/ASNA/dotnet-avr-example-dal-class)
         //
         // The developers' PC and endusers' PCs need to have the VisualRPG Windows deployment 
         // installed and licensed.  
 
         // Declare global (to this form/class) class variables. 
+
+        // Declare the AVR class this C# app uses.
         FourWinds.Customer.ListByName cl;
+
         //ASNA.VisualRPG.Runtime.Database DGDB;
         FourWinds.Customer.DBConnection DGDB;
 

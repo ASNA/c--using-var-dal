@@ -18,33 +18,22 @@ namespace FourWindsCustomerList
         // can then reference those values for other runtime connections.  
         private void buttonLogin_Click(object sender, EventArgs e)
         {
+            FourWinds.Customer.DBConnection DGDB;
+
             // The runtime database name is provided as a static constant in the 
             // Program class. 
-            //ASNA.VisualRPG.Runtime.Database DGDB = 
-            //    new ASNA.VisualRPG.Runtime.Database(Program.RUNTIME_DB_NAME);
-
-            FourWinds.Customer.DBConnection DGDB = 
-                new FourWinds.Customer.DBConnection(Program.RUNTIME_DB_NAME, 
-                                                    textboxUser.Text.Trim(), 
-                                                    textboxPassword.Text.Trim());
-
-            // Create an instance of an AVR class with a ConnectDB method. This instance
-            // is only used for authenticating the user. 
-            FourWinds.Customer.ListByName cl = new FourWinds.Customer.ListByName(DGDB.Connection);
-            // Override the runtime DatabaseName's User and Password properties with those 
-            // provided by the user at runtime. 
-            //DGDB.pgmDB.User = textboxUser.Text.Trim();
-            //DGDB.pgmDB.Password = textboxPassword.Text.Trim();
-
+            DGDB =  new FourWinds.Customer.DBConnection(Program.RUNTIME_DB_NAME, 
+                                                            textboxUser.Text.Trim(), 
+                                                            textboxPassword.Text.Trim());
             try
             {
                 // Attempt DB connect.
-                cl.ConnectDB();
+                DGDB.ConnectDB();
                 // Save user and password for use later. 
                 Program.UserName = textboxUser.Text.Trim();
                 Program.Password = textboxPassword.Text.Trim();
                 // Disconnect DB. 
-                cl.DisconnectDB();
+                DGDB.DisconnectDB();
             }
             catch (Exception ex)
             {
