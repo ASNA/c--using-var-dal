@@ -4,7 +4,7 @@
 // This form confirms a user's credentials to the IBM i. The approved user and password are stored in static 
 // variables in the Program class(Program.cs). 
 // 
-// ![](loginform.png)
+// ![](listform.png)
 // 
 // 
 // ---

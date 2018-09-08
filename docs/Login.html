@@ -64,8 +64,7 @@ can then reference those values for other runtime connections.  </p>
     </div>
     <div class='code'>
       <div class="highlight"><pre>        <span class="kr">private</span> <span class="k">void</span> <span class="nx">buttonLogin_Click</span><span class="p">(</span><span class="nx">object</span> <span class="nx">sender</span><span class="p">,</span> <span class="nx">EventArgs</span> <span class="nx">e</span><span class="p">)</span>
-        <span class="p">{</span>
-            <span class="nx">FourWinds</span><span class="p">.</span><span class="nx">Customer</span><span class="p">.</span><span class="nx">DBConnection</span> <span class="nx">DGDB</span><span class="p">;</span></pre></div>
+        <span class="p">{</span></pre></div>
     </div>
   </div>
   <div class='clearall'></div>
@@ -78,9 +77,10 @@ can then reference those values for other runtime connections.  </p>
 Program class. </p>
     </div>
     <div class='code'>
-      <div class="highlight"><pre>            <span class="nx">DGDB</span> <span class="o">=</span>  <span class="k">new</span> <span class="nx">FourWinds</span><span class="p">.</span><span class="nx">Customer</span><span class="p">.</span><span class="nx">DBConnection</span><span class="p">(</span><span class="nx">Program</span><span class="p">.</span><span class="nx">RUNTIME_DB_NAME</span><span class="p">,</span> 
-                                                            <span class="nx">textboxUser</span><span class="p">.</span><span class="nx">Text</span><span class="p">.</span><span class="nx">Trim</span><span class="p">(),</span> 
-                                                            <span class="nx">textboxPassword</span><span class="p">.</span><span class="nx">Text</span><span class="p">.</span><span class="nx">Trim</span><span class="p">());</span>
+      <div class="highlight"><pre>            <span class="nx">FourWinds</span><span class="p">.</span><span class="nx">Customer</span><span class="p">.</span><span class="nx">DBConnection</span> <span class="nx">DGDB</span> <span class="o">=</span>  
+                  <span class="k">new</span> <span class="nx">FourWinds</span><span class="p">.</span><span class="nx">Customer</span><span class="p">.</span><span class="nx">DBConnection</span><span class="p">(</span><span class="nx">Program</span><span class="p">.</span><span class="nx">RUNTIME_DB_NAME</span><span class="p">,</span> 
+                                                      <span class="nx">textboxUser</span><span class="p">.</span><span class="nx">Text</span><span class="p">.</span><span class="nx">Trim</span><span class="p">(),</span> 
+                                                      <span class="nx">textboxPassword</span><span class="p">.</span><span class="nx">Text</span><span class="p">.</span><span class="nx">Trim</span><span class="p">());</span>
             <span class="k">try</span>
             <span class="p">{</span></pre></div>
     </div>

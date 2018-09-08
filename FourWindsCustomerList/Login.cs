@@ -29,13 +29,12 @@ namespace FourWindsCustomerList
         // can then reference those values for other runtime connections.  
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-            FourWinds.Customer.DBConnection DGDB;
-
             // The runtime database name is provided as a static constant in the 
             // Program class. 
-            DGDB =  new FourWinds.Customer.DBConnection(Program.RUNTIME_DB_NAME, 
-                                                            textboxUser.Text.Trim(), 
-                                                            textboxPassword.Text.Trim());
+            FourWinds.Customer.DBConnection DGDB =  
+                  new FourWinds.Customer.DBConnection(Program.RUNTIME_DB_NAME, 
+                                                      textboxUser.Text.Trim(), 
+                                                      textboxPassword.Text.Trim());
             try
             {
                 // Attempt DB connect.

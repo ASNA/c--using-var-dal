@@ -43,6 +43,7 @@
             // 
             // buttonNext
             // 
+            this.buttonNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonNext.Location = new System.Drawing.Point(555, 67);
             this.buttonNext.Name = "buttonNext";
             this.buttonNext.Size = new System.Drawing.Size(112, 35);
@@ -91,7 +92,8 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvCust.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvCust.RowHeadersVisible = false;
-            this.dgvCust.RowTemplate.Height = 24;
+            this.dgvCust.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvCust.RowTemplate.Height = 36;
             this.dgvCust.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dgvCust.Size = new System.Drawing.Size(894, 467);
             this.dgvCust.TabIndex = 20;
@@ -111,6 +113,7 @@
             // 
             // buttonPositionTo
             // 
+            this.buttonPositionTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonPositionTo.Location = new System.Drawing.Point(314, 67);
             this.buttonPositionTo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonPositionTo.Name = "buttonPositionTo";
@@ -131,6 +134,7 @@
             // 
             // buttonGotoFirst
             // 
+            this.buttonGotoFirst.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonGotoFirst.Location = new System.Drawing.Point(434, 67);
             this.buttonGotoFirst.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonGotoFirst.Name = "buttonGotoFirst";
@@ -152,7 +156,7 @@
             this.Controls.Add(this.dgvCust);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "C# program using AVR for .NET data class";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCust)).EndInit();
